@@ -65,6 +65,12 @@ struct IpAddress {
         return fstring<16>((const char*)data.data());
     }
 
+    static IpAddress fromBinary(fstring<16> s) {
+        IpAddress r;
+        memcpy(r.data.data(), s.data(), 16);
+        return r;
+    }
+
     static IpAddress fromBinary(std::string s) {
         assert (s.size() == 16);
         IpAddress r;

@@ -17,5 +17,6 @@ std::string readId();
 void writeHosts();
 void readHosts();
 void writeHostname(std::string hostname);
+void writeWebsetupSecret(std::string token);
 std::string readHostname();
 }
