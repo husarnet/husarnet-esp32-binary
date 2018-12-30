@@ -5,7 +5,12 @@
 #include <functional>
 #include <vector>
 #include <memory>
+#include <mutex>
 #include "string_view.h"
+
+extern std::recursive_mutex globalLock;
+
+using mutex_guard = std::lock_guard<std::recursive_mutex>;
 
 namespace OsSocket {
 using PacketCallack = std::function<void(InetAddress, string_view)>;

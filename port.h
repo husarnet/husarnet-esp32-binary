@@ -70,7 +70,7 @@ __attribute__((weak)) void hperf_compute() {}
 // ---
 
 int64_t currentTime();
-void startThread(std::function<void()> func, const char* name, int stack);
+void startThread(std::function<void()> func, const char* name, int stack, int priority=2);
 
 inline std::string randBytes(int count) {
     std::string s;
